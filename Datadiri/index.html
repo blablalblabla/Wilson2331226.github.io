@@ -31,6 +31,9 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.figma.com/file/KE8voNh1UDgSAo59SollSe/Untitled?type=design&node-id=0%3A1&mode=design&t=QQCEpkzx33gZD5EQ-1" tabindex="-1" aria-disabled="true">Prototype</a>
+        </li>
       </ul>
       <section>
         <div class="container">
@@ -45,6 +48,36 @@
           </div>
         </div>
       </section>
+      
+      
+      <div class="container">
+        <h1>Interactive Photo Album</h1>
+        <img id="album-img" class="album-img" src="ah.png" alt="Image 1">
+        <br>
+        <button class="btn" onclick="prevImage()">Previous</button>
+        <button class="btn" onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        // JavaScript for navigating through images
+        var currentImageIndex = 0;
+        var images = [
+            "ah.png",
+            "album2.jpeg",
+            "album1.jpeg"
+            // Add more image paths as needed
+        ];
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById("album-img").src = images[currentImageIndex];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById("album-img").src = images[currentImageIndex];
+        }
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
